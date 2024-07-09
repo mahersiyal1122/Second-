@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    background-color: #000000ef; 
+    background: #000                                      ;
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+@layer components {
+    .navOptions {
+        @apply flex items-center gap-7
+    }
+
+    .navOptions p {
+        @apply cursor-pointer hover:scale-[1.05] hover:font-bold
+    }
+
+    .inputPlace-1 {
+        @apply absolute z-20 h-[70vh] w-screen flex items-center justify-end right-52 mt-8
+    }
+
+    .inputPlace-2 {
+        @apply absolute z-20 h-[70vh] w-screen flex items-start justify-end top-24 right-80 mt-6
+    }
+
+    .inputPlace-3 {
+        @apply absolute z-20 h-[70vh] w-screen flex items-end justify-center top-7 right-9 mt-8
+    }
+
+    .inputPlace-4 {
+        @apply absolute z-20 h-[70vh] w-screen flex items-center justify-end top-[120px] right-[400px] mt-8
+    }
+
+    .inputPlace-5 {
+        @apply absolute z-20 h-[70vh] w-screen flex items-start justify-start top-[85px] left-[100px] mt-7
+    }
+}
+
+.inputText span {
+    font-size: 80px;
+    font-weight: 600;
+    /* -webkit-text-fill-color: transparent; */
+}
+
+/* .wrapper{
+    background-image: url("./assets/eyeImage.jpg");
+    background-image: url("./assets/snowFall.jpg");
+    background-color: white;
+    background-repeat: round;
+    -webkit-background-clip: text;
+    -webkit-animation: eye 5s linear infinite;
+    }
+    
+    @keyframes eye {
+    0%{
+        background-position: 0% 50%;
+        }
+        50%{
+            background-position: -50% -100%;
+            }
+            100%{
+                background-position: 100% -50%;
+                }
+                } */
+
+textarea {
+    resize: none;
+    /* Disable resizing */
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.5;
+    position: absolute;
+}
+
+
+.mainContainer .subContainer1, .mainContainer .subContainer2 {
+    color: white;
+    background: #000;
+    /* mix-blend-mode: color-dodge; */
+    mix-blend-mode: difference;
+}
+
+.video {
+    /* -webkit-backface-visibility: hidden; */
+}
