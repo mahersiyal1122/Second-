@@ -16,7 +16,7 @@ const ContextProvider = (props) => {
     useEffect(() => {
         const timer = async () => {
             const timeout = setTimeout(() => {
-                setOnInputClick(false)
+                setInputVal("")
                 setOnEnter(false)
             }, resultData.length * (config.speed + 4));
             timeoutsRef.current.push(timeout);
@@ -32,7 +32,7 @@ const ContextProvider = (props) => {
         let response=await runChat(inputVal)
         response=response.split("*").join("")
         response=response.split("#").join("")
-        response=response.trim().slice(0,160)
+        response=response.trim().slice(0,config.textLength)
 
         if (response.length>0){
             setResultData(response)

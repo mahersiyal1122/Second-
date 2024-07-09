@@ -48,8 +48,10 @@ body {
 .inputText span {
     font-size: 80px;
     font-weight: 600;
-    /* -webkit-text-fill-color: transparent; */
 }
+
+
+  
 
 /* .wrapper{
     background-image: url("./assets/eyeImage.jpg");
@@ -86,11 +88,13 @@ textarea {
 }
 
 
-.mainContainer .subContainer1, .mainContainer .subContainer2 {
+.mainContainer .subContainer1 .subSpan , .mainContainer .subContainer2 {
     color: white;
     background: #000;
     /* mix-blend-mode: color-dodge; */
     mix-blend-mode: difference;
+    /* mix-blend-mode: overlay; */
+    /* text-shadow: 5px 5px 0px red; */
 }
 
 .video {
