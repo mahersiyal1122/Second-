@@ -11,6 +11,7 @@ const ContextProvider = (props) => {
     const [textAnimation,setTextAnimation]=useState(false)
     const [saveInputVal, setSaveInputVal] = useState("")
     const [onEnter, setOnEnter] = useState(false)
+    const [spanDisplay, setSpanDisplay] = useState(false)
     const timeoutsRef = useRef([]);
 
     useEffect(() => {
@@ -18,6 +19,7 @@ const ContextProvider = (props) => {
             const timeout = setTimeout(() => {
                 setInputVal("")
                 setOnEnter(false)
+                setSpanDisplay(true)
             }, resultData.length * (config.speed + 4));
             timeoutsRef.current.push(timeout);
         }
@@ -25,6 +27,7 @@ const ContextProvider = (props) => {
         return () => { 
             timeoutsRef.current.forEach(timeout => clearTimeout(timeout));
         timeoutsRef.current = [];
+        setSpanDisplay(false)
          }
     }, [resultData])
 
@@ -61,7 +64,9 @@ const ContextProvider = (props) => {
         saveInputVal,
         setSaveInputVal,
         onEnter,
-        setOnEnter
+        setOnEnter,
+        spanDisplay,
+        setSpanDisplay
     }
 
     return (

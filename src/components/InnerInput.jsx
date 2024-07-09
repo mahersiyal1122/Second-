@@ -4,7 +4,7 @@ import { Context } from '../context/Context'
 const InnerInput = () => {
 
   const { inputVal, setInputVal, onInputClick, setOnInputClick, getResponseFromGemini, setTextAnimation, textAnimation,setSaveInputVal, setOnEnter, onEnter } = useContext(Context)
-  const [enterPresses, setEnterPresses] = useState(1);
+  const [enterPresses, setEnterPresses] = useState(0);
   const [inputRandomPlace, setInputRandomPlace] = useState(1)
   const handleChange = (e) => {
     setInputVal(e.target.value)
@@ -42,7 +42,7 @@ const InnerInput = () => {
     inputPlace()
   },[textAnimation,enterPresses])
   useEffect(() => {
-    if (enterPresses > 1) {
+    if (enterPresses > 0) {
       setTextAnimation(true);
     } else {
       setTextAnimation(false);
@@ -55,7 +55,7 @@ const InnerInput = () => {
         setOnInputClick(true)
         setInputVal("")
       }} className={`bg-transparent outline-none ${textAnimation ? "text-center text-xl -mt-12 ": ""}  ${textAnimation && (inputRandomPlace ===1 ?'-mt-12':inputRandomPlace ===2 ?'-mt-5':inputRandomPlace ===3 ?'mb-7':inputRandomPlace ===4 ?'-mt-12':inputRandomPlace ===5 ?'-mt-7':'')} `}>Type your answer</p>}
-      {onInputClick && !onEnter && <textarea value={inputVal} onChange={handleChange} onKeyDown={handleEnterKey} className={`bg-transparent outline-none text-center text-xl -mt-3`} type="text" placeholder='Type your answer' />}
+      {onInputClick && !onEnter && <textarea autoFocus value={inputVal} onChange={handleChange} onKeyDown={handleEnterKey} className={`bg-transparent outline-none text-center text-xl -mt-3`} type="text" placeholder='Type your answer' />}
     </div>
   )
 }

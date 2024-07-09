@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className='w-screen h-screen relative mainContainer overflow-hidden'>
-      <div className={`w-screen ${!textAnimation ? "flex items-center min-h-[80vh]" : "h-[90vh] flex items-start justify-normal"} `}>
+      <div className={`w-screen ${!textAnimation ? "flex items-center h-[80vh]" : "h-[100vh] flex items-start justify-normal"} `}>
         <div className={`subContainer1 ${!textAnimation ? "w-1/2 flex justify-center" : ""} `}><InnerComp /></div>
         <div className={`${!textAnimation ? "w-1/2" : "hidden"}`}><InnerInput /></div>
       </div>
